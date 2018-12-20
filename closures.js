@@ -206,24 +206,15 @@ function secretNumber() {
   Fix the code below to log the desired output.
 */
 
-// function timeOutCounter() {
-//   for (var i = 0; i <= 5; i++) {
-//     setTimeout(function() {
-//       console.log(i);
-//     }, i * 1000);
-//   }
-// }
-// timeOutCounter();
-
 function timeOutCounter() {
-  function inner() {
-    for (var i = 0; i <= 5; i++) {
-      console.log(i);
-    setTimeout(function() {
-    }, i * 1000);
-  }
+  for (var i = 0; i <= 5; i++) {
+    inner(i);
 }
-  return inner();
+  function inner(i) {
+      setTimeout(function() {
+        console.log(i);
+      }, i * 1000);
+  }
 }
 
 timeOutCounter();
